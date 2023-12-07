@@ -1,1 +1,1 @@
-https://github.com/mafikj/Semantic-Similarity-Analysis.git
+https://github.com/mafikaj/Semantic-Similarity-Analysis.git
