@@ -7,12 +7,11 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install spaCy and download the model
-RUN pip install --no-cache-dir spacy && \
-    python -m spacy download en_core_web_md
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Define environment variable
-ENV NAME SemanticApp
+# Download spaCy model 'en_core_web_md'
+RUN python -m spacy download en_core_web_md
 
 # Run semantic.py when the container launches
-CMD ["python", "./semantic.py"]
+CMD ["python", "semantic.py"]
